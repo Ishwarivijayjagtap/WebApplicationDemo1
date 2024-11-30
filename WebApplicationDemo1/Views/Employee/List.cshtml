@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1> Employee List</h1>
+<p>
+    @ViewData["message"] ;
+
+</p>
+<div>
+    <ol>
+        @foreach (string s in (IEnumerable<string>)ViewData["names"])
+        {
+            <li>
+                @s
+            </li>
+            
+        }
+    </ol>
+
+</div>
+<div>
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Dept</th>
+            <th>Salary</th>
+        </tr>
+        @foreach (Employee e in (IEnumerable<Employee>)ViewData["emplist"])
+        {
+            <tr>
+                <td>@e.Id</td>
+                <td>@e.Name</td>
+                <td>@e.Dept</td>
+                <td>@e.Salary</td>
+            </tr>
+        }
+    </table>
+</div>
+<h2>using ViewBag</h2>
+
+<div>
+    <ol>
+        @foreach (string s in (IEnumerable<string>)ViewBag.Names)
+        {
+            <li>
+                @s
+            </li>
+
+        }
+    </ol>
+
+</div>
+<div>
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Dept</th>
+            <th>Salary</th>
+        </tr>
+        @foreach (Employee e in (IEnumerable<Employee>)ViewBag.Employees)
+        {
+            <tr>
+                <td>@e.Id</td>
+                <td>@e.Name</td>
+                <td>@e.Dept</td>
+                <td>@e.Salary</td>
+            </tr>
+        }
+    </table>
+</div>
+
+
